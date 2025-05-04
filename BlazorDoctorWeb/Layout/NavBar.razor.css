@@ -24,7 +24,7 @@ nav {
     align-items: center;
     font-size: 24px;
     font-weight: 700;
-    color: #1e88e5; /* --primary color from original CSS */
+    color: #1e88e5; /* --primary color */
 }
 
 .logo-icon {
@@ -43,28 +43,30 @@ nav {
 
     .nav-links a {
         text-decoration: none;
-        color: #333; /* --dark color from original CSS */
+        color: #333; /* --dark color */
         font-weight: 500;
         transition: color 0.3s;
     }
 
-        .nav-links a:hover {
-            color: #1e88e5; /* --primary color from original CSS */
-        }
-
-.btn {
-    background-color: #1e88e5; /* --primary color */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-    .btn:hover {
-        background-color: #1565c0; /* --primary-dark color */
+    /* Special styling for the Book Appointment button */
+    .nav-links .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1e88e5;
+        color: white;
+        padding: 6px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+        margin-left: 30px;
+        box-sizing: border-box;
     }
+
+        .nav-links .btn:hover {
+            background-color: #1565c0; /* --primary-dark */
+        }
 
 /* Mobile menu functionality */
 .mobile-menu-btn {
@@ -93,6 +95,10 @@ nav {
         .nav-links li {
             margin: 10px 0;
             text-align: center;
+        }
+
+        .nav-links .btn {
+            margin-left: 0; /* Reset margin for mobile */
         }
 
     .mobile-menu-btn {
