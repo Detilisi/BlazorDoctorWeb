@@ -1,5 +1,4 @@
-﻿.testimonials {
-    background-color: white;
+﻿section {
     padding: 80px 0;
 }
 
@@ -26,34 +25,28 @@
         color: #757575; /* gray color */
     }
 
-.testimonial-grid {
+.contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-bottom: 50px;
 }
 
-.testimonial-card {
-    background-color: #f5f5f5; /* light color */
+.contact-card {
+    background-color: white;
     padding: 30px;
     border-radius: 10px;
+    text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-.testimonial-text {
-    font-style: italic;
+.contact-icon {
+    font-size: 36px;
+    color: #26a69a; /* accent color */
     margin-bottom: 20px;
 }
 
-.testimonial-author {
-    display: flex;
-    align-items: center;
-}
-
-.author-info h4 {
-    font-size: 18px;
-}
-
-.author-info p {
-    color: #757575; /* gray color */
-    font-size: 14px;
+.contact-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
 }

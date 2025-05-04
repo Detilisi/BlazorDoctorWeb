@@ -1,5 +1,36 @@
-﻿<h3>ContactSection</h3>
+﻿@namespace BlazorDoctorWeb.Components
+@using System.ComponentModel.DataAnnotations
 
-@code {
-
-}
+<section id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Reach out to schedule an appointment or ask any questions about our services</p>
+        </div>
+        <div class="contact-info">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location</h3>
+                <p>123 Healing Way, Suite 400<br>Wellness City, WC 10001</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone</h3>
+                <p>(555) 123-4567</p>
+                <p>Emergency: (555) 987-6543</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>info@drjohnson.com</p>
+                <p>appointments@drjohnson.com</p>
+            </div>
+        </div>
+    </div>
+</section>
