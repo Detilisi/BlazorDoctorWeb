@@ -25,11 +25,14 @@
 .btn {
     background-color: #1e88e5; /* primary color */
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 25px;
+    border-radius: 10px;
     text-decoration: none;
+    font-size: 18px;
     font-weight: 500;
     transition: background-color 0.3s;
+    border-color: white;
+    margin-top: 20px;
 }
 
     .btn:hover {
