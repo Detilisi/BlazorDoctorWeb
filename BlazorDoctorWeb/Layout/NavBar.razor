@@ -1,5 +1,63 @@
-﻿<h3>NavBar</h3>
+﻿@inject IJSRuntime JSRuntime
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-heartbeat"></i></span>
+                <span>Dr. Sarah Johnson</span>
+            </div>
+            <div class="mobile-menu-btn @(MobileMenuOpen ? "active" : "")" @onclick="ToggleMobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links @(MobileMenuOpen ? "mobile-active" : "")">
+                <li><a href="#home" @onclick="@(e => NavigateTo(e, "#home"))">Home</a></li>
+                <li><a href="#services" @onclick="@(e => NavigateTo(e, "#services"))">Services</a></li>
+                <li><a href="#about" @onclick="@(e => NavigateTo(e, "#about"))">About</a></li>
+                <li><a href="#testimonials" @onclick="@(e => NavigateTo(e, "#testimonials"))">Testimonials</a></li>
+                <li><a href="#contact" @onclick="@(e => NavigateTo(e, "#contact"))">Contact</a></li>
+                <li><a href="#" class="btn" @onclick="@(e => BookAppointment(e))">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 
 @code {
+    private bool MobileMenuOpen { get; set; } = false;
 
+    private void ToggleMobileMenu()
+    {
+        MobileMenuOpen = !MobileMenuOpen;
+    }
+
+    private async Task NavigateTo(MouseEventArgs e, string elementId)
+    {
+        MobileMenuOpen = false;
+        await JSRuntime.InvokeVoidAsync("scrollToElement", elementId);
+    }
+
+    private async Task BookAppointment(MouseEventArgs e)
+    {
+        MobileMenuOpen = false;
+        await JSRuntime.InvokeVoidAsync("scrollToElement", "#contact");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Register JS function for smooth scrolling
+            await JSRuntime.InvokeVoidAsync("eval", @"
+                window.scrollToElement = function(elementId) {
+                    const element = document.querySelector(elementId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            ");
+        }
+    }
 }

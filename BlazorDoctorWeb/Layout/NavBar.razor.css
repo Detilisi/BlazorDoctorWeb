@@ -1,0 +1,127 @@
+﻿header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e88e5; /* --primary color from original CSS */
+}
+
+.logo-icon {
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+    .nav-links li {
+        margin-left: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333; /* --dark color from original CSS */
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+        .nav-links a:hover {
+            color: #1e88e5; /* --primary color from original CSS */
+        }
+
+.btn {
+    background-color: #1e88e5; /* --primary color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+    .btn:hover {
+        background-color: #1565c0; /* --primary-dark color */
+    }
+
+/* Mobile menu functionality */
+.mobile-menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px;
+        z-index: 99;
+        transition: all 0.3s ease;
+    }
+
+        .nav-links.mobile-active {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #1e88e5;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+}
