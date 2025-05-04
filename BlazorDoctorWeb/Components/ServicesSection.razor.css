@@ -1,0 +1,56 @@
+﻿section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+    .section-title h2 {
+        font-size: 36px;
+        color: #1e88e5; /* primary color */
+        margin-bottom: 20px;
+    }
+
+    .section-title p {
+        max-width: 800px;
+        margin: 0 auto;
+        color: #757575; /* gray color */
+    }
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
+
+.service-icon {
+    font-size: 48px;
+    color: #26a69a; /* accent color */
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
